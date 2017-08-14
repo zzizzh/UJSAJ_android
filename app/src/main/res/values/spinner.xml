@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sigungu">
+        <item>시군구</item>
+    </string-array>
+    <string-array name="cat1">
+        <item>대분류</item>
+    </string-array>
+    <string-array name="cat2">
+        <item>중분류</item>
+    </string-array>
+    <string-array name="cat3">
+        <item>소분류</item>
+    </string-array>
+</resources>

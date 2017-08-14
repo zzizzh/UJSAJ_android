@@ -1,4 +1,4 @@
-#Sun Aug 06 21:50:05 KST 2017
-base.0=C\:\\Android\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
+#Tue Aug 15 03:51:47 KST 2017
+base.0=C\:\\Users\\Public\\StudioProjects\\UJSAJ_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
 renamed.0=classes.dex
-file.0=C\:\\Android\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex
+file.0=C\:\\Users\\Public\\StudioProjects\\UJSAJ_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex

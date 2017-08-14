@@ -11,7 +11,8 @@ public class Posts implements Serializable{
 	String artist;
 	String song;
 	String comment;
-	
+
+	int userID;
 	int postsID;
 	int like;
 

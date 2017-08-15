@@ -1,22 +1,18 @@
 package com.example.myapplication.PhysicalArchitecture;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.InetAddress;
-import java.net.PortUnreachableException;
+import java.io.Serializable;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import com.example.myapplication.Foundation.PostsList;
 import com.example.myapplication.Data.Posts;
 import com.example.myapplication.Data.User;
 
-public class Client extends Thread
+public class Client extends Thread implements Serializable
 {
 	Socket sock;
 	clientWrite clientW;
@@ -34,7 +30,6 @@ public class Client extends Thread
 	}
 
 	public void run(){
-        cControl=new ClientControl();
         try {
             System.out.println("-----Ŭ���̾�Ʈ�� ����Ǿ����ϴ�.");
             sock = new Socket(host, port);
@@ -244,7 +239,6 @@ class clientRead extends Thread
         finally
         {
             try {
-
                 socket.close();
             } catch (IOException e) {
                 // TODO Auto-generated catch block
@@ -277,26 +271,23 @@ class clientWrite extends Thread
         try {
             out = new ObjectOutputStream(socket.getOutputStream());
 
-            while (true)
-            {
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                while(sendToReadyString==true)
-                {
-                    out.writeObject(console);
-                    sendToReadyString=false;
-                }
-                while(sendToReadyPosts==true)
-                {
-                    out.writeObject(postsConsole);
-                    sendToReadyPosts=false;
-                }
-
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
+            while(sendToReadyString==true)
+            {
+                out.writeObject(console);
+                sendToReadyString=false;
+            }
+            while(sendToReadyPosts==true)
+            {
+                out.writeObject(postsConsole);
+                sendToReadyPosts=false;
+            }
+
         }
         catch (IOException e)
         {
@@ -318,10 +309,12 @@ class clientWrite extends Thread
 	{
 		console=msg;
 		sendToReadyString=true;
+        this.start();
 	}
 	public void sendToServerPosts(Posts posts)
 	{
 		postsConsole=posts;
 		sendToReadyPosts=true;
+        this.start();
 	}
 }

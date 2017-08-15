@@ -403,4 +403,20 @@ public class ClientControl {
 	public void setMoreMyPosts(boolean moreMyPosts) {
 		this.moreMyPosts = moreMyPosts;
 	}
+
+	public ArrayList<Posts> getTimeLine() {
+		return timeLine;
+	}
+
+	public ArrayList<Posts> getMyPostsList() {
+		return myPostsList;
+	}
+
+	public ArrayList<Posts> getMyLikeList() {
+		return myLikeList;
+	}
+
+	public ArrayList<String> getStringList() {
+		return stringList;
+	}
 }

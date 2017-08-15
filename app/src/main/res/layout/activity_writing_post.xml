@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.example.youngju.temp.CreateNewPost">
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+
+                <ImageView
+                    android:id="@+id/userChoiceImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="184dp"
+                    android:background="#00ff0000"
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+
+                <TableRow
+                    android:id="@+id/searchButtonLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp">
+
+                    <Space
+                        android:layout_width="9dp"
+                        android:layout_height="2dp" />
+
+                    <Button
+                        android:id="@+id/Pic"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_gravity="left|center_horizontal"
+                        android:layout_margin="10dp"
+                        android:background="#ff4059"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="사진 검색" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="2dp" />
+
+                    <Button
+                        android:id="@+id/Youtube"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:background="#ff4059"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="동영상 검색" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="2dp" />
+
+                    <Button
+                        android:id="@+id/Location"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_gravity="right|center_horizontal"
+                        android:layout_margin="10dp"
+                        android:background="#ff4059"
+                        android:elevation="0dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="장소 검색" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="2dp" />
+
+                </TableRow>
+
+                <EditText
+                    android:id="@+id/opinionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Opinion"
+                    android:inputType="textMultiLine"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <EditText
+                    android:id="@+id/youtubeURL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="youtubeURL"
+                    android:inputType="text"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <EditText
+                    android:id="@+id/LocationText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Location"
+                    android:inputType="text"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+
+                android:background="?attr/colorPrimary"
+                android:weightSum="1"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="316dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/toolbarlogo" />
+            </android.support.v7.widget.Toolbar>
+
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="sans-serif-condensed"
+                android:text="BACK" />
+
+            <Button
+                android:id="@+id/postButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="14"
+                android:layout_gravity="right"
+                android:layout_row="0"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="sans-serif-condensed"
+                android:text="POST" />
+        </GridLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>

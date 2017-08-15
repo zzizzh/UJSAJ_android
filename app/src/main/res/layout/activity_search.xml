@@ -4,131 +4,172 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="33dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="시/도"
-            android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="구/군/동"
-            android:layout_weight="1"
-            android:textAlignment="center" />
-        </LinearLayout>
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
+
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/spinner_area_1"
-            android:layout_gravity="center"
-            android:gravity="center_vertical|center">
-        </Spinner>
-        <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_vertical|center"></Spinner>
+
+        <Spinner
             android:id="@+id/spinner_area_2"
-            tools:gravity="center_vertical|center_horizontal">
-        </Spinner>
-        </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:gravity="center_vertical|center_horizontal"></Spinner>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="콘텐츠"
-            android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="조건1"
-            android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
+
         <Spinner
+            android:id="@+id/spinner_type"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/spinner_type">
-        </Spinner>
+            android:layout_height="match_parent"
+            android:layout_weight="1"></Spinner>
+
         <Spinner
+            android:id="@+id/spinner_cat1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/spinner_cat1">
-        </Spinner>
+            android:layout_height="match_parent"
+            android:layout_weight="1"></Spinner>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="33dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="조건2"
-            android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="조건3"
-            android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
+
         <Spinner
+            android:id="@+id/spinner_cat2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/spinner_cat2">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
         </Spinner>
+
         <Spinner
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/spinner_cat3"
-            android:layout_width="wrap_content">
-        </Spinner>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></Spinner>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
-            android:text="검색"
+            android:id="@+id/send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="send" />
+
+        <Button
             android:id="@+id/button"
-            android:onClick="onSearchBtnClicked" />
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:onClick="onSearchBtnClicked"
+            android:text="search" />
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

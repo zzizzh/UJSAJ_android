@@ -4,6 +4,10 @@
         "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
+        "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\help3.png",
+        "source": "C:\\Android\\MyApplication\\app\\src\\main\\res\\drawable\\help3.png"
+    },
+    {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
@@ -20,12 +24,12 @@
         "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
-        "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\notification_bg.xml"
-    },
-    {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sync_black_24dp.xml",
         "source": "C:\\Android\\MyApplication\\app\\src\\main\\res\\drawable\\ic_sync_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\notification_bg.xml"
     },
     {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
@@ -58,6 +62,10 @@
     {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\help1.png",
+        "source": "C:\\Android\\MyApplication\\app\\src\\main\\res\\drawable\\help1.png"
     },
     {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
@@ -186,6 +194,10 @@
     {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\9bf5ee50a0428447d151ac71bc24767f7d2bdd18\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\help2.png",
+        "source": "C:\\Android\\MyApplication\\app\\src\\main\\res\\drawable\\help2.png"
     },
     {
         "merged": "C:\\Android\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",

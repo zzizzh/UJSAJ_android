@@ -1,5 +1,6 @@
 package com.example.myapplication.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -66,6 +67,7 @@ public class SearchActivity extends AppCompatActivity {
     String areaCode = "", sigunguCode = "";
 
     Button search_btn;
+    Button send_btn;
 
 
     @Override
@@ -103,8 +105,25 @@ public class SearchActivity extends AppCompatActivity {
                     }
                 }
             }
+
         };
 
+        send_btn = (Button)findViewById(R.id.send);
+
+        Button.OnClickListener sendClickListner = new View.OnClickListener() {
+            public void onClick(View v1) {
+                Intent intent = new Intent(getApplicationContext(), WritingPostActivity.class);
+                intent.putExtra(cat1Code, "cat1Code");
+                intent.putExtra(cat2Code, "cat2Code");
+                intent.putExtra(cat3Code, "cat3Code");
+                intent.putExtra(contentTypeIdCode, "contentTypeIdCode");
+                intent.putExtra(areaCode, "areaCode");
+                intent.putExtra(sigunguCode, "sigunguCode");
+                startActivity(intent);
+            }
+        };
+
+        send_btn.setOnClickListener(sendClickListner);
         search_btn.setOnClickListener(mClickListener);
 
         spinner_area_1 = (Spinner) findViewById(R.id.spinner_area_1);
@@ -152,7 +171,7 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                    contentTypeIdCode = "";
+                contentTypeIdCode = "";
             }
         });
 
@@ -363,8 +382,10 @@ public class SearchActivity extends AppCompatActivity {
                     cat1Code = "";
             }
         });
+
     }
 
 }
+
 
 

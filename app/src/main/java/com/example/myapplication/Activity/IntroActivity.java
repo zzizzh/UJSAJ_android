@@ -2,6 +2,7 @@ package com.example.myapplication.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -25,7 +26,6 @@ public class IntroActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         init();
-
         handler.postDelayed(runnable, 1500);
     }
 
@@ -38,5 +38,8 @@ public class IntroActivity extends Activity {
         super.onBackPressed();
         handler.removeCallbacks(runnable);
     }
+
+
+
 }
 

@@ -6,7 +6,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    출처: http://bitsoul.tistory.com/51 [Happy Programmer~]
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -20,6 +22,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.HelpActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".Activity.LoginActivity"
@@ -39,7 +45,9 @@
             android:name=".Activity.SettingsActivity"
             android:label="@string/title_activity_settings">
         </activity>
-        <activity android:name=".Activity.MadeByActivity">
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

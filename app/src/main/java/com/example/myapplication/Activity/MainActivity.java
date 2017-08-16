@@ -14,15 +14,22 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.myapplication.Fragment.LikeFragment;
 import com.example.myapplication.Fragment.MyPageFragment;
+import com.example.myapplication.PhysicalArchitecture.Client;
+import com.example.myapplication.PhysicalArchitecture.ClientControl;
 import com.example.myapplication.R;
 import com.example.myapplication.Fragment.SearchFragment;
 import com.example.myapplication.Fragment.TimeLineFragment;
+
+/*
+ * 2017.08.14 song
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private BackPressCloseHandler backPressCloseHandler;
-
+    ClientControl client;
     private MainActivity mainActivity;
 
     /**
@@ -49,8 +56,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         CheckAppFirstExecute(); //is first run ?
+
+        try {
+            Intent intent = getIntent();
+            client = ClientControl.getClientControl();
+        }catch (Exception e){
+            client=null;
+            Log.d("test","Cannot find client in intent");
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(mainActivity, WritingPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -142,14 +157,22 @@ public class MainActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
 
-            if(position == 0)
+            if(position == 0) {
+                Log.d("test", "timeLineFragment");
                 return new TimeLineFragment();
-            else if(position == 1)
+            }
+            else if(position == 1) {
+                Log.d("test", "SearchFragment");
                 return new SearchFragment();
-            else if(position == 2)
+            }
+            else if(position == 2) {
+                Log.d("test", "LikeFragment");
                 return new LikeFragment();
-            else if(position == 3)
+            }
+            else if(position == 3) {
+                Log.d("test", "MyPageFragment");
                 return new MyPageFragment();
+            }
             else
                 return null;
         }

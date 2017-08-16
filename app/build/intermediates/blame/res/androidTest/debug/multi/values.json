@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Android\\MyApplication\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\Public\\AndroidProject\\MyApplication (1)\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\유재인\\.android\\build-cache\\7beb27045c453d99448572d6f3551c49ca21dd69\\output\\res\\values\\values.xml",
+                    "file": "C:\\Users\\Public\\Documents\\.android\\avd\\.android\\build-cache\\a3f8409f815219d96a6d8978a58e7fce1892714f\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

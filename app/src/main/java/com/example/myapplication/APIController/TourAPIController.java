@@ -2,7 +2,7 @@ package com.example.myapplication.APIController;
 
 import android.util.Log;
 
-import com.example.myapplication.Data.TourData;
+import com.example.myapplication.ProblemDomain.TourData;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -10,13 +10,12 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
-import static com.example.myapplication.Data.Constants.*;
+import static com.example.myapplication.ProblemDomain.Constants.*;
 
 /**
  * Created by jm on 2017-04-23.
@@ -30,7 +29,7 @@ public class TourAPIController {
 
     private static final String serviceKey  = "?ServiceKey=Q%2Bh3qGHK7KUnkP%2FiO5s%2BmFf59UnBlEmg4Bkuiuwi8aZxGnzRchGJqZK46x4%2Fh9BGemhiUekc37nT%2BwPGxJMFzA%3D%3D";
     private static final String mobileOS    = "&MobileOS=AND";
-    private static final String mobileApp   = "&MobileApp=Paldo";
+    private static final String mobileApp   = "&MobileApp=MyApplication";
 
     private static boolean queryOK = false;
 

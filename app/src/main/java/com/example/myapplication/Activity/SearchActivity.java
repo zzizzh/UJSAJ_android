@@ -1,6 +1,5 @@
 package com.example.myapplication.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,23 +12,21 @@ import android.widget.Toast;
 
 
 import com.example.myapplication.APIController.TourAPIController;
-import com.example.myapplication.Data.TourData;
+import com.example.myapplication.ProblemDomain.TourData;
 import com.example.myapplication.R;
 import com.example.myapplication.CustomClass.ListViewAdapter;
 
 import java.util.ArrayList;
 
-import static com.example.myapplication.Data.Constants.AREA_CODE;
-import static com.example.myapplication.Data.Constants.AREA_TOUR_CODE;
-import static com.example.myapplication.Data.Constants.CODE;
-import static com.example.myapplication.Data.Constants.CONTENTES_TYPE_CODE;
-import static com.example.myapplication.Data.Constants.CONTENTS_TYPE;
-import static com.example.myapplication.Data.Constants.NAME;
-import static com.example.myapplication.Data.Constants.SERVICE_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.AREA_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.AREA_TOUR_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CONTENTES_TYPE_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CONTENTS_TYPE;
+import static com.example.myapplication.ProblemDomain.Constants.NAME;
+import static com.example.myapplication.ProblemDomain.Constants.SERVICE_CODE;
 
 public class SearchActivity extends AppCompatActivity {
-
-    public static SearchActivity thisActivity = null;
 
     TourAPIController tourAPIController;    // 관광정보 openAPI를 위한 컨트롤러
 
@@ -59,7 +56,6 @@ public class SearchActivity extends AppCompatActivity {
 
     SearchActivity searchActivity = this;
 
-    ListView listView;
     ListViewAdapter adapter;
 
     String cat1Code = "", cat2Code = "", cat3Code = "";
@@ -67,19 +63,12 @@ public class SearchActivity extends AppCompatActivity {
     String areaCode = "", sigunguCode = "";
 
     Button search_btn;
-    Button send_btn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-        thisActivity = this;
-
-        listView = (ListView)findViewById(R.id.listView);
-        adapter = new ListViewAdapter();
-        listView.setAdapter(adapter);
 
         tourAPIController = TourAPIController.getToruAPIController();
 
@@ -99,31 +88,14 @@ public class SearchActivity extends AppCompatActivity {
                         Toast toast = Toast.makeText(searchActivity, "검색결과 : " + tour_data_list.size(), Toast.LENGTH_SHORT);
                         toast.show();
                         for(int i=0; i<tour_data_list.size(); i++){
-                            adapter.addItem(tour_data_list.get(i));
+                            //adapter.addItem(tour_data_list.get(i));
                         }
                         adapter.notifyDataSetChanged();
                     }
                 }
             }
-
         };
 
-        send_btn = (Button)findViewById(R.id.send);
-
-        Button.OnClickListener sendClickListner = new View.OnClickListener() {
-            public void onClick(View v1) {
-                Intent intent = new Intent(getApplicationContext(), WritingPostActivity.class);
-                intent.putExtra(cat1Code, "cat1Code");
-                intent.putExtra(cat2Code, "cat2Code");
-                intent.putExtra(cat3Code, "cat3Code");
-                intent.putExtra(contentTypeIdCode, "contentTypeIdCode");
-                intent.putExtra(areaCode, "areaCode");
-                intent.putExtra(sigunguCode, "sigunguCode");
-                startActivity(intent);
-            }
-        };
-
-        send_btn.setOnClickListener(sendClickListner);
         search_btn.setOnClickListener(mClickListener);
 
         spinner_area_1 = (Spinner) findViewById(R.id.spinner_area_1);
@@ -382,10 +354,8 @@ public class SearchActivity extends AppCompatActivity {
                     cat1Code = "";
             }
         });
-
     }
 
 }
-
 
 

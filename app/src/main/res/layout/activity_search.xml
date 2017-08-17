@@ -153,16 +153,25 @@
 
         <Button
             android:id="@+id/send"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:text="send" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="190dp"
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onSearchBtnClicked"
+            android:layout_gravity="right"
             android:text="search" />
+
+        <Button
+            android:id="@+id/search_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="map" />
 
     </LinearLayout>
 

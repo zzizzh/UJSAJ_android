@@ -24,23 +24,18 @@
             android:layout_weight="0.00"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/userpic"
-                android:layout_width="260dp"
-                android:layout_height="match_parent"
+            <ImageView
+                android:id="@+id/userPic"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:cropToPadding="false"
-                android:elevation="0dp"
-                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/pic" />
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="257dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -54,13 +49,15 @@
                         android:orientation="horizontal">
 
 
-                        <TextView
+                        <EditText
                             android:id="@+id/userNickName"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:fontFamily="sans-serif-condensed"
-                            android:gravity="right|center_vertical"
-                            android:text="nickname@id" />
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="JIJAMIN" />
+
                     </LinearLayout>
 
                     <TextView
@@ -80,10 +77,16 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-condensed"
                         android:gravity="center_vertical|center_horizontal"
-                        android:text="0"
+                        android:text="6"
                         android:textSize="18sp" />
 
                 </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/changePicButton"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
 
             </LinearLayout>
 
@@ -100,6 +103,12 @@
             android:layout_height="2dp"
             android:layout_weight="0.02"
             app:srcCompat="@color/colorPrimary" />
+
+        <ListView
+            android:id="@+id/MyPostList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.00" />
     </LinearLayout>
 
 </RelativeLayout>

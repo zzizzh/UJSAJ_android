@@ -3,6 +3,7 @@ package com.example.myapplication.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,19 +14,21 @@ import android.widget.Toast;
 
 
 import com.example.myapplication.APIController.TourAPIController;
-import com.example.myapplication.Data.TourData;
+import com.example.myapplication.ProblemDomain.Location;
+import com.example.myapplication.ProblemDomain.TourData;
 import com.example.myapplication.R;
 import com.example.myapplication.CustomClass.ListViewAdapter;
 
 import java.util.ArrayList;
 
-import static com.example.myapplication.Data.Constants.AREA_CODE;
-import static com.example.myapplication.Data.Constants.AREA_TOUR_CODE;
-import static com.example.myapplication.Data.Constants.CODE;
-import static com.example.myapplication.Data.Constants.CONTENTES_TYPE_CODE;
-import static com.example.myapplication.Data.Constants.CONTENTS_TYPE;
-import static com.example.myapplication.Data.Constants.NAME;
-import static com.example.myapplication.Data.Constants.SERVICE_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.AREA_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.AREA_TOUR_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CONTENTES_TYPE_CODE;
+import static com.example.myapplication.ProblemDomain.Constants.CONTENTS_TYPE;
+import static com.example.myapplication.ProblemDomain.Constants.GET_LOCATION;
+import static com.example.myapplication.ProblemDomain.Constants.NAME;
+import static com.example.myapplication.ProblemDomain.Constants.SERVICE_CODE;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -67,8 +70,8 @@ public class SearchActivity extends AppCompatActivity {
     String areaCode = "", sigunguCode = "";
 
     Button search_btn;
-    Button send_btn;
 
+    int SELECTED_LOCATION   = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +80,19 @@ public class SearchActivity extends AppCompatActivity {
 
         thisActivity = this;
 
-        listView = (ListView)findViewById(R.id.listView);
-        adapter = new ListViewAdapter();
-        listView.setAdapter(adapter);
-
         tourAPIController = TourAPIController.getToruAPIController();
 
-        search_btn = (Button)findViewById(R.id.button);
+        search_btn = (Button)findViewById(R.id.search);
+        Button map=(Button)findViewById(R.id.search_map);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent =new Intent(SearchActivity.this,SearchLocationByMap.class);
+                intent.putExtra("TYPE", contentTypeIdCode);
+                startActivityForResult(intent, 0);
+            }
+        });
 
         Button.OnClickListener mClickListener = new View.OnClickListener() {
             public void onClick(View v) {
@@ -99,31 +108,14 @@ public class SearchActivity extends AppCompatActivity {
                         Toast toast = Toast.makeText(searchActivity, "검색결과 : " + tour_data_list.size(), Toast.LENGTH_SHORT);
                         toast.show();
                         for(int i=0; i<tour_data_list.size(); i++){
-                            adapter.addItem(tour_data_list.get(i));
+                            //adapter.addItem(tour_data_list.get(i));
                         }
                         adapter.notifyDataSetChanged();
                     }
                 }
             }
-
         };
 
-        send_btn = (Button)findViewById(R.id.send);
-
-        Button.OnClickListener sendClickListner = new View.OnClickListener() {
-            public void onClick(View v1) {
-                Intent intent = new Intent(getApplicationContext(), WritingPostActivity.class);
-                intent.putExtra(cat1Code, "cat1Code");
-                intent.putExtra(cat2Code, "cat2Code");
-                intent.putExtra(cat3Code, "cat3Code");
-                intent.putExtra(contentTypeIdCode, "contentTypeIdCode");
-                intent.putExtra(areaCode, "areaCode");
-                intent.putExtra(sigunguCode, "sigunguCode");
-                startActivity(intent);
-            }
-        };
-
-        send_btn.setOnClickListener(sendClickListner);
         search_btn.setOnClickListener(mClickListener);
 
         spinner_area_1 = (Spinner) findViewById(R.id.spinner_area_1);
@@ -175,7 +167,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        /*
+       /*
             지역 선택 스피너 초기화
          */
         name_code_list = tourAPIController.queryAPI(AREA_CODE, "", true);
@@ -211,7 +203,7 @@ public class SearchActivity extends AppCompatActivity {
 
                 if(position != 0) {
                     areaCode = "&areaCode=" + area_code_list[position];
-                    /*
+                     /*
                         시 군 구 스피너 초기화
                      */
                     name_code_list = tourAPIController.queryAPI(AREA_CODE, areaCode, true);
@@ -258,7 +250,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        /*
+         /*
             대분류 스피너 초기화
          */
         name_code_list = tourAPIController.queryAPI(SERVICE_CODE, "", true);
@@ -320,7 +312,7 @@ public class SearchActivity extends AppCompatActivity {
                     spinner_cat2.setAdapter(adapter_cat2);
 
                     /*
-                        중분류 스피너 선택 리스너
+                        두번째 시군구 스피너 선택 리스너
                      */
                     spinner_cat2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                         @Override
@@ -329,8 +321,8 @@ public class SearchActivity extends AppCompatActivity {
                             if(position != 0) {
                                 cat2Code = "&cat2=" + cat2_code_list[position];
                                 /*
-                                    소분류 스피너 초기화
-                                 */
+                                     중분류 스피너 선택 리스너
+                                */
                                 name_code_list = tourAPIController.queryAPI(SERVICE_CODE, cat1Code+cat2Code, true);
 
                                 int size = name_code_list.get(CODE).size();
@@ -382,10 +374,22 @@ public class SearchActivity extends AppCompatActivity {
                     cat1Code = "";
             }
         });
-
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == GET_LOCATION)
+        {
+            Location selectedLocation = (Location)data.getSerializableExtra("result");
+            Intent intent = new Intent();
+            intent.putExtra("result", selectedLocation);
+            Log.d("test", "[ SearchActivity ] selected Location : " + selectedLocation.toString());
+            setResult(GET_LOCATION, intent);
+            finish();
+        }
+        return;
+    }
 }
-
 
 

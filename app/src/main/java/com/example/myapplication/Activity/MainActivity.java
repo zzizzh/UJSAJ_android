@@ -3,9 +3,13 @@ package com.example.myapplication.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -14,15 +18,30 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.myapplication.Fragment.LikeFragment;
 import com.example.myapplication.Fragment.MyPageFragment;
+import com.example.myapplication.PhysicalArchitecture.Client;
+import com.example.myapplication.PhysicalArchitecture.ClientControl;
 import com.example.myapplication.R;
 import com.example.myapplication.Fragment.SearchFragment;
 import com.example.myapplication.Fragment.TimeLineFragment;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import static com.example.myapplication.ProblemDomain.Constants.RECEIVE_SUCCESSS;
+
+/*
+ * 2017.08.14 song
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private BackPressCloseHandler backPressCloseHandler;
-
+    ClientControl client;
     private MainActivity mainActivity;
 
     /**
@@ -49,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         CheckAppFirstExecute(); //is first run ?
+
+        client = ClientControl.getClientControl();
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -93,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
             startActivity(intent);
         }
-
         return !isFirst;
     }
 
@@ -124,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.change_pic_settings) {
+            Intent intent = new Intent(this, ChangeUserPicActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -141,17 +167,19 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            Log.d("test", "position : " + position);
 
             if(position == 0)
                 return new TimeLineFragment();
             else if(position == 1)
-                return new SearchFragment();
+                return new SearchFragment(MainActivity.this);
             else if(position == 2)
                 return new LikeFragment();
             else if(position == 3)
                 return new MyPageFragment();
             else
-                return null;
+               return null;
+
         }
 
         @Override

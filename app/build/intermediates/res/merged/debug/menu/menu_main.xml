@@ -10,4 +10,12 @@
         android:fontFamily="sans-serif-condensed"
 
         app:showAsAction="never" />
+    <item
+        android:id="@+id/change_pic_settings"
+        android:orderInCategory="100"
+        android:title="change user pic"
+        android:fontFamily="sans-serif-condensed"
+
+        app:showAsAction="never" />
+
 </menu>

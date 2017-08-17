@@ -1,22 +1,28 @@
-package com.example.myapplication.Data;
+package com.example.myapplication.ProblemDomain;
+
+import java.io.Serializable;
 
 /**
  * Created by jm on 2017-04-23.
- * 관광 정보 데이터 클래스
+ * 愿�愿� �젙蹂� �뜲�씠�꽣 �겢�옒�뒪
  */
 
-public class TourData {
+public class TourData implements Serializable{
 
-    private String addr1            = null;         // 주소
-    private String addr2            = null;         // 상세주소
+    private String addr1            = null;         // 二쇱냼
+    private String addr2            = null;         // �긽�꽭二쇱냼
     private int contentid           = -1;         //
     private int contenttypeid       = -1;         //
-    private String firstimage       =  null;       // 메인 이미지
-    private String firstimage2      = null;       // 썸네일
-    private double mapx = -1, mapy  = -1;    // GPS좌표
-    private String tel              = null;         // 전화번호
-    private String title            = null;         // 이름
-    private int mlevel              = -1;         // 지도 축척
+    private String firstimage       =  null;       // 硫붿씤 �씠誘몄�
+    private String firstimage2      = null;       // �뜽�꽕�씪
+    private double mapX = -1, mapY  = -1;    // GPS醫뚰몴
+    private String tel              = null;         // �쟾�솕踰덊샇
+    private String title            = null;         // �씠由�
+    private int mlevel              = -1;         // 吏��룄 異뺤쿃
+    private int bigLocation         = -1;
+    private int midLocation         = -1;
+    private int smallLocation       = -1;
+
 
     public TourData(){}
 
@@ -27,8 +33,8 @@ public class TourData {
         this.contenttypeid = contenttypeid;
         this.firstimage = firstimage;
         this.firstimage2 = firstimage2;
-        this.mapx = mapx;
-        this.mapy = mapy;
+        this.mapX = mapX;
+        this.mapY = mapY;
         this.tel = tel;
         this.title = title;
         this.mlevel = mlevel;
@@ -42,12 +48,12 @@ public class TourData {
         this.contenttypeid = contenttypeid;
     }
 
-    public void setMapx(double mapx) {
-        this.mapx = mapx;
+    public void setMapX(double mapx) {
+        this.mapX = mapx;
     }
 
-    public void setMapy(double mapy) {
-        this.mapy = mapy;
+    public void setMapY(double mapy) {
+        this.mapY = mapy;
     }
 
     public void setTel(String tel) {
@@ -108,12 +114,12 @@ public class TourData {
         return firstimage2;
     }
 
-    public double getMapx() {
-        return mapx;
+    public double getMapX() {
+        return mapX;
     }
 
-    public double getMapy() {
-        return mapy;
+    public double getMapY() {
+        return mapY;
     }
 
     public String getTel() {
@@ -126,5 +132,42 @@ public class TourData {
 
     public int getMlevel() {
         return mlevel;
+    }
+
+    public int getBigLocation() {
+        return bigLocation;
+    }
+
+    public void setBigLocation(int bigLocation) {
+        this.bigLocation = bigLocation;
+    }
+
+    public int getMidLocation() {
+        return midLocation;
+    }
+
+    public void setMidLocation(int midLocation) {
+        this.midLocation = midLocation;
+    }
+
+    public int getSmallLocation() {
+        return smallLocation;
+    }
+
+    public void setSmallLocation(int smallLocation) {
+        this.smallLocation = smallLocation;
+    }
+
+    public Location toLocation(){
+        Location location = new Location();
+
+        location.setBigLocation(bigLocation);
+        location.setMidLocation(midLocation);
+        location.setSmallLocation(smallLocation);
+        location.setTitle(title);
+        location.setContentID(contentid);
+        location.setContentTypeID(contenttypeid);
+
+        return location;
     }
 }

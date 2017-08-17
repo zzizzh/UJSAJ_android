@@ -1,9 +1,11 @@
-package com.example.myapplication.Data;
+package com.example.myapplication.ProblemDomain;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class User implements Serializable{
-	
+
+	private static final long serialVersionUID = 400L;
+
 	private int index;
 	private String id,pw;
 	private ArrayList<Integer> likeList;
@@ -43,6 +45,10 @@ public class User implements Serializable{
 		this.id = id;
 		this.pw = pw;
 	}
+
+	public void delLikeList(int postsIndex) { likeList.remove(postsIndex);}
+	public void addLikeList(int postIndex) { likeList.add(postIndex);}
+
 	public void setUserIndex(int userIndex){
 		this.index = userIndex;
 	}
@@ -58,5 +64,15 @@ public class User implements Serializable{
 	public void setUserMyList(ArrayList<Integer> myList){
 		this.myList = myList;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"index=" + index +
+				", id='" + id + '\'' +
+				", pw='" + pw + '\'' +
+				", likeList=" + likeList +
+				", myList=" + myList +
+				'}';
+	}
 }

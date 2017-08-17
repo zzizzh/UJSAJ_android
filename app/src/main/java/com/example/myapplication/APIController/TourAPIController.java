@@ -2,7 +2,7 @@ package com.example.myapplication.APIController;
 
 import android.util.Log;
 
-import com.example.myapplication.Data.TourData;
+import com.example.myapplication.ProblemDomain.TourData;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -10,13 +10,12 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
-import static com.example.myapplication.Data.Constants.*;
+import static com.example.myapplication.ProblemDomain.Constants.*;
 
 /**
  * Created by jm on 2017-04-23.
@@ -30,7 +29,7 @@ public class TourAPIController {
 
     private static final String serviceKey  = "?ServiceKey=Q%2Bh3qGHK7KUnkP%2FiO5s%2BmFf59UnBlEmg4Bkuiuwi8aZxGnzRchGJqZK46x4%2Fh9BGemhiUekc37nT%2BwPGxJMFzA%3D%3D";
     private static final String mobileOS    = "&MobileOS=AND";
-    private static final String mobileApp   = "&MobileApp=Paldo";
+    private static final String mobileApp   = "&MobileApp=MyApplication";
 
     private static boolean queryOK = false;
 
@@ -120,7 +119,7 @@ public class TourAPIController {
 
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 XmlPullParser xpp = factory.newPullParser();
-                xpp.setInput(new InputStreamReader(is, "UTF-8"));  //inputstream 으로부터 xml 입력받기
+                xpp.setInput(new InputStreamReader(is, "UTF-8"));  //inputstream �쑝濡쒕��꽣 xml �엯�젰諛쏄린
 
                 String tag;
 
@@ -132,14 +131,15 @@ public class TourAPIController {
                 ArrayList<String> nameList = new ArrayList<>();
                 ArrayList<String> codeList = new ArrayList<>();
 
-                while (eventType != XmlPullParser.END_DOCUMENT) {
+                Log.d("api", "start while : " + tourData.getTitle());
 
+                while (eventType != XmlPullParser.END_DOCUMENT) {
                     switch (eventType) {
                         case XmlPullParser.START_DOCUMENT:
                             break;
 
                         case XmlPullParser.START_TAG:
-                            tag = xpp.getName();    //테그 이름 얻어오기
+                            tag = xpp.getName();    //�뀒洹� �씠由� �뼸�뼱�삤湲�
 
                             if (tag.equals("code")){
                                 xpp.next();
@@ -157,14 +157,12 @@ public class TourAPIController {
                                     tourData = new TourData();
                                 }
                                 tourData.setAddr1(xpp.getText());
-                            }
 
+                            }
                             else if(tag.equals("addr2")){
                                 xpp.next();
                                 tourData.setAddr2(xpp.getText());
                             }
-
-
                             else if(tag.equals("contentid")){
                                 xpp.next();
                                 tourData.setContentid(Integer.parseInt(xpp.getText()));
@@ -173,8 +171,6 @@ public class TourAPIController {
                                 xpp.next();
                                 tourData.setContenttypeid(Integer.parseInt(xpp.getText()));
                             }
-
-
                             else if(tag.equals("firstimage")){
                                 xpp.next();
                                 tourData.setFirstimage(xpp.getText());
@@ -183,19 +179,14 @@ public class TourAPIController {
                                 xpp.next();
                                 tourData.setFirstimage2(xpp.getText());
                             }
-
                             else if(tag.equals("mapx")){
                                 xpp.next();
-                                tourData.setMapx(Double.parseDouble(xpp.getText()));
+                                tourData.setMapX(Double.parseDouble(xpp.getText()));
                             }
-
-
                             else if(tag.equals("mapy")){
                                 xpp.next();
-                                tourData.setMapy(Double.parseDouble(xpp.getText()));
+                                tourData.setMapY(Double.parseDouble(xpp.getText()));
                             }
-
-
                             else if(tag.equals("tel")){
                                 xpp.next();
                                 tourData.setTel(xpp.getText());
@@ -203,23 +194,35 @@ public class TourAPIController {
                             else if(tag.equals("title")){
                                 xpp.next();
                                 tourData.setTitle(xpp.getText());
+                                Log.d("api", "title : " + tourData.getTitle());
                             }
                             else if(tag.equals("mlevel")){
                                 xpp.next();
                                 tourData.setMlevel(Integer.parseInt(xpp.getText()));
+                            }else if(tag.equals("cat1")){
+                                xpp.next();
+                                tourData.setBigLocation(Integer.parseInt(xpp.getText().substring(2)));
+                            }else if(tag.equals("cat2")){
+                                xpp.next();
+                                tourData.setMidLocation(Integer.parseInt(xpp.getText().substring(2)));
+                            }else if(tag.equals("cat3")){
+                                xpp.next();
+                                tourData.setSmallLocation(Integer.parseInt(xpp.getText().substring(2)));
                             }
 
                         case XmlPullParser.TEXT:
                             break;
                         case XmlPullParser.END_TAG:
-                            tag = xpp.getName();    //테그 이름 얻어오기
+                            tag = xpp.getName();    //�뀒洹� �씠由� �뼸�뼱�삤湲�
                             break;
                     }
                     eventType = xpp.next();
                 }
                 list.add(NAME, nameList);
                 list.add(CODE, codeList);
+
                 tourDataList.add(tourData);
+                Log.d("api", "get data : " + tourData.getTitle());
             } catch (Exception e) {
                 e.printStackTrace();
             }

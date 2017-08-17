@@ -7,29 +7,45 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.myapplication.Foundation.PostsList;
+import com.example.myapplication.PhysicalArchitecture.ClientControl;
+import com.example.myapplication.ProblemDomain.Location;
+import com.example.myapplication.ProblemDomain.Posts;
 import com.example.myapplication.R;
 
 import org.w3c.dom.Text;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import static com.example.myapplication.ProblemDomain.Constants.GET_LOCATION;
+import static com.example.myapplication.ProblemDomain.Constants.GET_LOCATION_URI;
+import static com.example.myapplication.ProblemDomain.Constants.GET_PICTURE_URI;
+import static com.example.myapplication.ProblemDomain.Constants.GO_TO_MAIN;
+
 
 public class WritingPostActivity extends AppCompatActivity {
-    public int GET_PICTURE_URI = 1;
-    public int GET_LOCATION_URI = 2;
-    public int GO_TO_MAIN = 4;
+
+    ClientControl client;
+    Posts posts;
+    Location location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing_post);
+
+        client=ClientControl.getClientControl();
+        posts=new Posts();
 
         Button buttonPic = (Button) findViewById(R.id.Pic);
         buttonPic.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +81,25 @@ public class WritingPostActivity extends AppCompatActivity {
         buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v4) {
-                TextView txt = (TextView)findViewById(R.id.opinionText);
+                TextView opinionTxt = (TextView)findViewById(R.id.opinionText);
+                TextView urlTxt = (TextView)findViewById(R.id.youtubeURL);
 
-                String text = txt.getText().toString();
+                String opinionText = opinionTxt.getText().toString();
+                String urlText = urlTxt.getText().toString();
+
+                posts.setComment(opinionText);
+                posts.setUrl(urlText);
+
+                posts.setArtist("IU");
+                posts.setSong("Palette");
+
+                client.post(posts);
+                PostsList postsList=new PostsList();
+                postsList.addPosts(posts);
+                client.addMyPostsList(postsList);
+
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra(text, "txt");
 
                 startActivityForResult(intent, GO_TO_MAIN);
             }
@@ -81,9 +111,16 @@ public class WritingPostActivity extends AppCompatActivity {
             public void onClick(View v5) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
+    }
+    public byte[] bitmapToByteArray( Bitmap bitmap ) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream() ;
+        bitmap.compress( Bitmap.CompressFormat.JPEG, 100, stream) ;
+        byte[] byteArray = stream.toByteArray() ;
+        return byteArray ;
     }
 
     @Override
@@ -93,8 +130,13 @@ public class WritingPostActivity extends AppCompatActivity {
                 try {
                     Uri selPhotoUri = data.getData();
                     Bitmap selPhoto = MediaStore.Images.Media.getBitmap( getContentResolver(), selPhotoUri );
+
+                    byte[] image=bitmapToByteArray(selPhoto);
+                    posts.setIImage(image);
+
+
                     ImageView imageView = (ImageView) findViewById(R.id.userChoiceImage) ;
-                    imageView.setImageBitmap(selPhoto) ;
+                    imageView.setImageBitmap(selPhoto);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -102,7 +144,7 @@ public class WritingPostActivity extends AppCompatActivity {
                 }
             }
         }
-        if(requestCode == GET_LOCATION_URI) {
+        else if(requestCode == GET_LOCATION_URI) {
             if (requestCode == Activity.RESULT_OK) {
                 /*Intent intent = getIntent();
                 String cat1Code = intent.getStringExtra("cat1Code");
@@ -112,14 +154,21 @@ public class WritingPostActivity extends AppCompatActivity {
                 String areaCode = intent.getStringExtra("areaCode");
                 String sigunguCode = intent.getStringExtra("sigunguCode");
 */
+            }
+        }
+        else if(requestCode == GO_TO_MAIN) {
+            if(requestCode == Activity.RESULT_OK) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivityForResult(intent, 0);
 
             }
         }
-        if(requestCode == GO_TO_MAIN) {
-            if(requestCode == Activity.RESULT_OK) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
+        else if(requestCode == GET_LOCATION){
+            location = (Location)data.getSerializableExtra("result");
+            Log.d("test", "[ WritingPostActivity ] selected Location : " + location.toString());
+            posts.setLocationInfo(location);
+            TextView textView=(TextView)findViewById(R.id.LocationText);
+            textView.setText("Daegu");
         }
     }
 

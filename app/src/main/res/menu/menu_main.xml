@@ -8,6 +8,7 @@
         android:orderInCategory="100"
         android:title="settings"
         android:fontFamily="sans-serif-condensed"
+<<<<<<< HEAD
 
         app:showAsAction="never" />
     <item
@@ -18,4 +19,8 @@
 
         app:showAsAction="never" />
 
+=======
+
+        app:showAsAction="never" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 </menu>

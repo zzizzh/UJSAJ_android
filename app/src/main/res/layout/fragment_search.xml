@@ -17,7 +17,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:text="시/도"
                 android:textAlignment="center" />
 
@@ -25,7 +28,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:text="구/군/동"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -60,7 +66,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:text="콘텐츠"
                 android:textAlignment="center" />
 
@@ -68,7 +77,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:text="조건1"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -101,7 +113,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="조건2"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:textAlignment="center" />
 
             <TextView
@@ -109,7 +124,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="조건3"
+<<<<<<< HEAD
                 android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -139,11 +157,18 @@
             android:orientation="horizontal">
 
             <Button
+<<<<<<< HEAD
                 android:id="@+id/searchButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onSearchBtnClicked"
                 android:fontFamily="sans-serif-condensed"
+=======
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSearchBtnClicked"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:text="검색" />
 
         </LinearLayout>

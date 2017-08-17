@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\fa49441577cf70b7fe37d81c53de95477b27b86c\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
@@ -30,5 +31,37 @@
     {
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\fa49441577cf70b7fe37d81c53de95477b27b86c\\output\\res\\drawable-v21\\avd_hide_password.xml"
+=======
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\479cf586edec0383831072e7e521c251ce12aaf8\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\479cf586edec0383831072e7e521c251ce12aaf8\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\479cf586edec0383831072e7e521c251ce12aaf8\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\479cf586edec0383831072e7e521c251ce12aaf8\\output\\res\\drawable-v21\\notification_action_background.xml"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 ]

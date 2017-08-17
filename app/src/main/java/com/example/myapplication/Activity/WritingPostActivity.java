@@ -7,21 +7,29 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+=======
+import android.view.View;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.example.myapplication.Foundation.PostsList;
 import com.example.myapplication.PhysicalArchitecture.ClientControl;
 import com.example.myapplication.ProblemDomain.Location;
 import com.example.myapplication.ProblemDomain.Posts;
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import com.example.myapplication.R;
 
 import org.w3c.dom.Text;
 
+<<<<<<< HEAD
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -37,6 +45,16 @@ public class WritingPostActivity extends AppCompatActivity {
     ClientControl client;
     Posts posts;
     Location location;
+=======
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+
+public class WritingPostActivity extends AppCompatActivity {
+    public int GET_PICTURE_URI = 1;
+    public int GET_LOCATION_URI = 2;
+    public int GO_TO_MAIN = 4;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +62,12 @@ public class WritingPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing_post);
 
+<<<<<<< HEAD
         client=ClientControl.getClientControl();
         posts=new Posts();
 
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         Button buttonPic = (Button) findViewById(R.id.Pic);
         buttonPic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +102,7 @@ public class WritingPostActivity extends AppCompatActivity {
         buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v4) {
+<<<<<<< HEAD
                 TextView opinionTxt = (TextView)findViewById(R.id.opinionText);
                 TextView urlTxt = (TextView)findViewById(R.id.youtubeURL);
 
@@ -100,6 +122,13 @@ public class WritingPostActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+=======
+                TextView txt = (TextView)findViewById(R.id.opinionText);
+
+                String text = txt.getText().toString();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra(text, "txt");
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
                 startActivityForResult(intent, GO_TO_MAIN);
             }
@@ -111,17 +140,23 @@ public class WritingPostActivity extends AppCompatActivity {
             public void onClick(View v5) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+<<<<<<< HEAD
                 finish();
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             }
         });
 
     }
+<<<<<<< HEAD
     public byte[] bitmapToByteArray( Bitmap bitmap ) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream() ;
         bitmap.compress( Bitmap.CompressFormat.JPEG, 100, stream) ;
         byte[] byteArray = stream.toByteArray() ;
         return byteArray ;
     }
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -130,6 +165,7 @@ public class WritingPostActivity extends AppCompatActivity {
                 try {
                     Uri selPhotoUri = data.getData();
                     Bitmap selPhoto = MediaStore.Images.Media.getBitmap( getContentResolver(), selPhotoUri );
+<<<<<<< HEAD
 
                     byte[] image=bitmapToByteArray(selPhoto);
                     posts.setIImage(image);
@@ -137,6 +173,10 @@ public class WritingPostActivity extends AppCompatActivity {
 
                     ImageView imageView = (ImageView) findViewById(R.id.userChoiceImage) ;
                     imageView.setImageBitmap(selPhoto);
+=======
+                    ImageView imageView = (ImageView) findViewById(R.id.userChoiceImage) ;
+                    imageView.setImageBitmap(selPhoto) ;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -144,7 +184,11 @@ public class WritingPostActivity extends AppCompatActivity {
                 }
             }
         }
+<<<<<<< HEAD
         else if(requestCode == GET_LOCATION_URI) {
+=======
+        if(requestCode == GET_LOCATION_URI) {
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             if (requestCode == Activity.RESULT_OK) {
                 /*Intent intent = getIntent();
                 String cat1Code = intent.getStringExtra("cat1Code");
@@ -154,6 +198,7 @@ public class WritingPostActivity extends AppCompatActivity {
                 String areaCode = intent.getStringExtra("areaCode");
                 String sigunguCode = intent.getStringExtra("sigunguCode");
 */
+<<<<<<< HEAD
             }
         }
         else if(requestCode == GO_TO_MAIN) {
@@ -170,6 +215,17 @@ public class WritingPostActivity extends AppCompatActivity {
             TextView textView=(TextView)findViewById(R.id.LocationText);
             textView.setText("Daegu");
         }
+=======
+
+            }
+        }
+        if(requestCode == GO_TO_MAIN) {
+            if(requestCode == Activity.RESULT_OK) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        }
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 
 }

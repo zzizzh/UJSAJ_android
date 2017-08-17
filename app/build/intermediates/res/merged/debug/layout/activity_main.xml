@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.myapplication.Activity.MainActivity">
+<<<<<<< HEAD
 
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
@@ -22,11 +23,14 @@
         android:layout_margin="@dimen/fab_margin"
         android:onClick="onClick"
         app:srcCompat="@android:drawable/ic_menu_send" />
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:paddingTop="@dimen/appbar_padding_top"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -39,6 +43,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="46dp"
 
                 android:background="?attr/colorPrimary"
@@ -57,6 +62,27 @@
 
         </LinearLayout>
 
+=======
+                android:layout_height="?attr/actionBarSize"
+
+                android:layout_weight="1"
+                android:background="?attr/colorPrimary"
+                android:weightSum="1"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="316dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.10"
+                    app:srcCompat="@drawable/toolbarlogo" />
+            </android.support.v7.widget.Toolbar>
+
+
+        </LinearLayout>
+
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         <TabHost
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -67,28 +93,44 @@
                 android:orientation="horizontal">
 
                 <ImageView
+<<<<<<< HEAD
                     android:id="@+id/timeline_icon"
+=======
+                    android:id="@+id/imageView7"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/ic_menu_recent_history" />
 
                 <ImageView
+<<<<<<< HEAD
                     android:id="@+id/search_icon"
+=======
+                    android:id="@+id/imageView5"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/ic_menu_search" />
 
                 <ImageView
+<<<<<<< HEAD
                     android:id="@+id/like_icon"
+=======
+                    android:id="@+id/imageView4"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/ic_menu_view" />
 
                 <ImageView
+<<<<<<< HEAD
                     android:id="@+id/mypage_icon"
+=======
+                    android:id="@+id/imageView3"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -99,7 +141,11 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="45dp">
+=======
+                android:layout_height="wrap_content">
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
             </TabWidget>
 
@@ -156,4 +202,21 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="onClick"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 </android.support.design.widget.CoordinatorLayout>

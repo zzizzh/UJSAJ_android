@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 #Thu Aug 17 16:29:32 KST 2017
 base.0=C\:\\Android\\MyApplication99\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Android\\MyApplication99\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+=======
+#Tue Aug 15 23:56:58 KST 2017
+base.0=C\:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c164d19c30217e43010b78e39374c0c0cc9bd968
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_83ab54e1221e6f3d618f5d76e45839b6de57863f\\classes.dex
+base.1=C\:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_83ab54e1221e6f3d618f5d76e45839b6de57863f
+file.0=C\:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c164d19c30217e43010b78e39374c0c0cc9bd968\\classes.dex
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d

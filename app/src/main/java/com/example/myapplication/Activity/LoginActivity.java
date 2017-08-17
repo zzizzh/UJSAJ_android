@@ -20,6 +20,10 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+<<<<<<< HEAD
+=======
+import android.text.TextUtils;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -34,7 +38,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import com.example.myapplication.PhysicalArchitecture.ClientControl;
+=======
+import com.example.myapplication.Data.User;
+import com.example.myapplication.PhysicalArchitecture.Client;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import com.example.myapplication.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -67,7 +76,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+<<<<<<< HEAD
     protected ClientControl client;
+=======
+    protected Client client;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,23 +95,40 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
+<<<<<<< HEAD
                     attemptLogin(mEmailView.getText().toString(),mPasswordView.getText().toString());
+=======
+                    attemptLogin();
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                     return true;
                 }
                 return false;
             }
         });
+<<<<<<< HEAD
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         setThreadPolicy(policy);
 
         client = ClientControl.getClientControl();
         client.client.start();
+=======
+/*
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        setThreadPolicy(policy);
+
+        client = new Client();
+        client.start();*/
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 attemptLogin(mEmailView.getText().toString(),mPasswordView.getText().toString());
+=======
+                attemptLogin();
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             }
         });
 
@@ -155,6 +185,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * errors are presented and no actual login attempt is made.
      */
 
+<<<<<<< HEAD
     private void attemptLogin(String id,String pw) {
         client.login("jijamin","123123");
         Log.d("test",mPasswordView.getText().toString());
@@ -184,6 +215,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else{
             Log.d("test","attemptLogin:else");
         }
+=======
+    private void attemptLogin() {
+
+   /*     client.getcControl().login("jijamin","123123");
+        Log.d("test2",mPasswordView.getText().toString());
+        Log.d("test3",mEmailView.getText().toString());
+        ArrayList<String> log;
+
+        while (true){
+            log=client.getcControl().getStringList();
+            if(log.size() != 0) break;
+        }
+        if("#fin"==log.get(0)){
+            log.remove(0);*/
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("client",client);
+            startActivity(intent);
+            finish();
+   //     } else{}
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 
     private boolean isEmailValid(String email) {

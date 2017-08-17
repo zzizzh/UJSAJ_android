@@ -15,10 +15,19 @@
 
     <!-- Login progress -->
 
+<<<<<<< HEAD
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.27" />
+=======
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_weight="0.20"></LinearLayout>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,6 +41,7 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/toolbarlogo" />
 
+<<<<<<< HEAD
     </LinearLayout>
 
     <Space
@@ -39,11 +49,30 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
         android:background="@android:color/white" />
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@android:color/background_light"
+        android:orientation="horizontal"></LinearLayout>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="190dp"
+=======
+        android:layout_height="227dp"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         android:background="@android:color/background_light">
 
         <LinearLayout
@@ -87,7 +116,11 @@
 
             <Button
                 android:id="@+id/email_sign_in_button"
+<<<<<<< HEAD
                 style="@android:style/Widget.Material.Button.Small"
+=======
+                style="?android:textAppearanceSmall"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

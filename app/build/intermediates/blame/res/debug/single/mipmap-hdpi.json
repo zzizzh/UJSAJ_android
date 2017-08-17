@@ -1,10 +1,19 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
         "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+=======
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "C:\\Users\\Public\\MyApplication\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Public\\MyApplication\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 ]

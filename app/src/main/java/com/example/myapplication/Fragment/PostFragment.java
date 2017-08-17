@@ -7,7 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 
+=======
+import android.widget.ImageButton;
+
+import com.example.myapplication.PhysicalArchitecture.Client;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import com.example.myapplication.R;
 
 
@@ -29,9 +35,21 @@ public class PostFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+<<<<<<< HEAD
     private OnFragmentInteractionListener mListener;
 
     public PostFragment() {
+=======
+    Client client;
+    private OnFragmentInteractionListener mListener;
+
+    public PostFragment() {
+        client=null;
+        // Required empty public constructor
+    }
+    public PostFragment(Client client) {
+        this.client=client;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         // Required empty public constructor
     }
 
@@ -62,11 +80,47 @@ public class PostFragment extends Fragment {
         }
     }
 
+<<<<<<< HEAD
+=======
+    boolean Liked=false;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+<<<<<<< HEAD
         return inflater.inflate(R.layout.listview_post, container, false);
+=======
+        View view= inflater.inflate(R.layout.listview_post, container, false);
+        final ImageButton unlike=view.findViewById(R.id.UnlikeStar);
+        final ImageButton like=view.findViewById(R.id.LikeStar);
+        like.setVisibility(View.GONE);
+
+        unlike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Liked){} else{
+                    unlike.setVisibility(View.GONE);
+                    like.setVisibility(View.VISIBLE);
+                    Liked=!Liked;
+                }
+
+            }
+        });
+
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Liked){
+                    like.setVisibility(View.GONE);
+                    unlike.setVisibility(View.VISIBLE);
+                    Liked=!Liked;
+                } else{}
+            }
+        });
+
+        return view;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 
     // TODO: Rename method, update argument and hook method into UI event

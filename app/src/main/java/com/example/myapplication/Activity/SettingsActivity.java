@@ -13,10 +13,17 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+<<<<<<< HEAD
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+=======
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.preference.RingtonePreference;
+import android.support.v7.app.ActionBar;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import android.text.TextUtils;
 import android.view.MenuItem;
 

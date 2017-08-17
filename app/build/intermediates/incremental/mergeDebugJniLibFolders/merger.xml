@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="C:\Android\MyApplication99\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Android\MyApplication99\app\src\debug\jniLibs"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="C:\Users\Public\MyApplication\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\Public\MyApplication\app\src\debug\jniLibs"/></dataSet></merger>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d

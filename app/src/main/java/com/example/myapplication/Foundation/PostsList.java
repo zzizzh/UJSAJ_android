@@ -1,5 +1,6 @@
 package com.example.myapplication.Foundation;
 
+<<<<<<< HEAD
 import com.example.myapplication.ProblemDomain.Posts;
 
 import java.io.Serializable;
@@ -56,3 +57,39 @@ public class PostsList implements Serializable{
 
 
 }
+=======
+import java.util.ArrayList;
+
+import com.example.myapplication.Data.Posts;
+
+public class PostsList {
+	ArrayList<Posts> postsList;
+	
+	public PostsList() {
+		postsList = new ArrayList<Posts>();
+	}
+
+	public void addPosts(Posts p) {
+		postsList.add(p);
+	}
+
+	public Posts getPosts(int i) {
+		return postsList.get(i);
+	}
+	
+	public ArrayList<Posts> getAll(){
+		return postsList;
+	}
+
+	public int size() {
+		return postsList.size();
+	}
+
+	public void deletePosts(int i) {
+		if (postsList.size() > 0)
+			postsList.remove(i);
+		else
+			System.out.println("������ �Ұ��� �մϴ�.");
+	}
+}
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d

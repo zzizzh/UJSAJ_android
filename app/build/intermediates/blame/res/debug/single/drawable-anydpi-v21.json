@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_info_black_24dp.xml",
         "source": "C:\\Android\\MyApplication99\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_info_black_24dp.xml"
     },
@@ -18,5 +19,13 @@
     {
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
         "source": "C:\\Users\\유재인\\.android\\build-cache\\fa49441577cf70b7fe37d81c53de95477b27b86c\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+=======
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\송영주\\.android\\build-cache\\1548df243afd0785deb8bf0bb097ee5965182ca5\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 ]

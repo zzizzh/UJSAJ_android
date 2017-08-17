@@ -4,17 +4,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<<<<<<< HEAD
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical"
+=======
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_weight="1"
             android:text="시/도"
             android:textAlignment="center"
@@ -69,19 +76,69 @@
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="sans-serif-condensed"/>
+=======
+            android:text="시/도"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="구/군/동"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_area_1"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center">
+        </Spinner>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_area_2"
+            tools:gravity="center_vertical|center_horizontal">
+        </Spinner>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="콘텐츠"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_weight="1"
             android:text="조건1"
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="sans-serif-condensed"/>
+=======
+            android:text="조건1"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="44dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -97,10 +154,27 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"></Spinner>
+=======
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_type">
+        </Spinner>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_cat1">
+        </Spinner>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="33dp"
         android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical"
@@ -123,10 +197,27 @@
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="sans-serif-condensed"/>
+=======
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="조건2"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="조건3"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="44dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -144,12 +235,30 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"></Spinner>
+=======
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_cat2">
+
+        </Spinner>
+        <Spinner
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_cat3"
+            android:layout_width="wrap_content">
+        </Spinner>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+<<<<<<< HEAD
 
         <Button
             android:id="@+id/send"
@@ -184,3 +293,19 @@
         android:layout_height="match_parent"
         android:id="@+id/listView"/>
 </LinearLayout>
+=======
+        <Button
+            android:text="검색"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:onClick="onSearchBtnClicked" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/searchList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d

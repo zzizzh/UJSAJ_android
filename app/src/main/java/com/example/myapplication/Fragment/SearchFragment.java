@@ -1,9 +1,16 @@
 package com.example.myapplication.Fragment;
+<<<<<<< HEAD
 import android.annotation.SuppressLint;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+=======
+import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +22,24 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.myapplication.APIController.TourAPIController;
+<<<<<<< HEAD
 import com.example.myapplication.CustomClass.ListViewAdapter;
 import com.example.myapplication.PhysicalArchitecture.ClientControl;
 import com.example.myapplication.ProblemDomain.TourData;
+=======
+import com.example.myapplication.Activity.MainActivity;
+import com.example.myapplication.Activity.SearchActivity;
+import com.example.myapplication.CustomClass.ListViewAdapter;
+import com.example.myapplication.Data.Posts;
+import com.example.myapplication.Data.TourData;
+import com.example.myapplication.Foundation.PostsList;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import com.example.myapplication.PhysicalArchitecture.Client;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import static com.example.myapplication.ProblemDomain.Constants.AREA_CODE;
 import static com.example.myapplication.ProblemDomain.Constants.AREA_TOUR_CODE;
 import static com.example.myapplication.ProblemDomain.Constants.CODE;
@@ -30,12 +47,22 @@ import static com.example.myapplication.ProblemDomain.Constants.CONTENTES_TYPE_C
 import static com.example.myapplication.ProblemDomain.Constants.CONTENTS_TYPE;
 import static com.example.myapplication.ProblemDomain.Constants.NAME;
 import static com.example.myapplication.ProblemDomain.Constants.SERVICE_CODE;
+=======
+import static com.example.myapplication.Data.Constants.AREA_CODE;
+import static com.example.myapplication.Data.Constants.AREA_TOUR_CODE;
+import static com.example.myapplication.Data.Constants.CODE;
+import static com.example.myapplication.Data.Constants.CONTENTES_TYPE_CODE;
+import static com.example.myapplication.Data.Constants.CONTENTS_TYPE;
+import static com.example.myapplication.Data.Constants.NAME;
+import static com.example.myapplication.Data.Constants.SERVICE_CODE;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 /**
  * Created by 유재인 on 2017-07-24.
  */
 
 public class SearchFragment extends Fragment {
+<<<<<<< HEAD
 
     //private static SearchFragment searchFragment = new SearchFragment();
     private AppCompatActivity thisActivity = null;
@@ -43,6 +70,10 @@ public class SearchFragment extends Fragment {
     ClientControl client;
     ListView listview;
     ListViewAdapter adapter;
+=======
+    AppCompatActivity thisActivity = null;
+    Client client;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     TourAPIController tourAPIController;    // 관광정보 openAPI를 위한 컨트롤러
 
@@ -70,12 +101,19 @@ public class SearchFragment extends Fragment {
     ArrayAdapter<String> adapter_type;
     ArrayAdapter<String> adapter_cat1, adapter_cat2, adapter_cat3;
 
+<<<<<<< HEAD
+=======
+    ListView listView;
+    ListViewAdapter adapter;
+
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     String cat1Code = "", cat2Code = "", cat3Code = "";
     String contentTypeIdCode = "";
     String areaCode = "", sigunguCode = "";
 
     Button search_btn;
 
+<<<<<<< HEAD
     @SuppressLint("ValidFragment")
     public SearchFragment(AppCompatActivity act) {
         thisActivity = act;
@@ -88,11 +126,19 @@ public class SearchFragment extends Fragment {
         return searchFragment;
     }
     */
+=======
+    public SearchFragment(Client client, AppCompatActivity act) {
+        this.client=client;
+        thisActivity=act;
+    }
+
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_search, container, false);
 
+<<<<<<< HEAD
         client=ClientControl.getClientControl();
         tourAPIController = TourAPIController.getToruAPIController();
 
@@ -105,6 +151,50 @@ public class SearchFragment extends Fragment {
 
             }
         });
+=======
+        tourAPIController = TourAPIController.getToruAPIController();
+
+        search_btn = (Button)v.findViewById(R.id.searchButton);
+
+        Button.OnClickListener mClickListener = new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+                ListView listview;
+                ListViewAdapter adapter;
+
+                // Adapter 생성
+                adapter = new ListViewAdapter(client.getcControl().getTimeLine());
+
+                // 리스트뷰 참조 및 Adapter달기
+                listview = (ListView) v.findViewById(R.id.SearchList);
+                listview.setAdapter(adapter);
+
+                // TO DO
+                //* change to adapter and if else
+                //*
+                tour_data_list = tourAPIController.queryAPI(AREA_TOUR_CODE, areaCode + sigunguCode +
+                        contentTypeIdCode + cat1Code + cat2Code + cat3Code);
+
+                if(tour_data_list != null){
+                    if(tour_data_list.size() == 0){
+                        Toast toast = Toast.makeText(thisActivity, "검색 결과 없음", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else{
+                        Toast toast = Toast.makeText(thisActivity, "검색결과 : " + tour_data_list.size(), Toast.LENGTH_SHORT);
+                        toast.show();
+                        for(int i=0; i<tour_data_list.size(); i++){
+                            //adapter.addItem(tour_data_list.get(i));
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        };
+
+        search_btn.setOnClickListener(mClickListener);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
         spinner_area_1 = (Spinner) v.findViewById(R.id.spinner_area_1);
 
@@ -365,6 +455,22 @@ public class SearchFragment extends Fragment {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
         return v;
     }
 }
+=======
+        ListView listview;
+        ListViewAdapter adapter;
+
+        // Adapter 생성
+        //adapter = new ListViewAdapter(null);
+        adapter = new ListViewAdapter();
+
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) v.findViewById(R.id.SearchList);
+        listview.setAdapter(adapter);
+        return v;
+    }
+}
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d

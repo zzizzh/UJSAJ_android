@@ -1,5 +1,6 @@
 package com.example.myapplication.PhysicalArchitecture;
 
+<<<<<<< HEAD
 
 import android.util.Log;
 
@@ -12,13 +13,32 @@ import java.util.ArrayList;
 
 
 public class ClientControl implements Serializable{
+=======
+import android.util.Log;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import com.example.myapplication.Data.Posts;
+import com.example.myapplication.Data.User;
+import com.example.myapplication.Foundation.PostsList;
+
+
+
+public class ClientControl implements Serializable {
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 	private ArrayList<Posts> timeLine;
 	private ArrayList<Posts> myPostsList;
 	private ArrayList<Posts> myLikeList;
 	private ArrayList<String> stringList;
 
+<<<<<<< HEAD
 	private User me = null;
+=======
+	private User me;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 	private String message = "";
 	/*
@@ -38,6 +58,7 @@ public class ClientControl implements Serializable{
 	private boolean dislike = false;
 	private boolean updateUser = false;
 
+<<<<<<< HEAD
 	private boolean closeSocket = false;
 
 	private long startTime = 0;
@@ -49,15 +70,25 @@ public class ClientControl implements Serializable{
 		timeLine = new ArrayList<Posts>();
 		myPostsList = new ArrayList<Posts>();
 		myLikeList  = new ArrayList<Posts>();
+=======
+	private long startTime = 0;
+
+	public ClientControl() {
+		timeLine = new ArrayList<Posts>();
+		myPostsList = new ArrayList<Posts>();
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 		stringList = new ArrayList<String>();
 
 		me = null;
 
+<<<<<<< HEAD
 		client = new Client();
 	}
 
 	public static ClientControl getClientControl(){
 		return cControl;
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 	}
 
    /*
@@ -88,7 +119,10 @@ public class ClientControl implements Serializable{
 		stringList = new ArrayList<String>();
 		timeLine = new ArrayList<Posts>();
 		myPostsList = new ArrayList<Posts>();
+<<<<<<< HEAD
 		myLikeList  = new ArrayList<Posts>();
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 		me = null;
 	}
@@ -118,8 +152,16 @@ public class ClientControl implements Serializable{
 			message += "%";
 			message += pass;
 
+<<<<<<< HEAD
 			Log.d("test", "[ CLIENTCONTROL : login ]ogin check: " + isLogin());
 			client.sendToServer(message);
+=======
+			if(Client.getClient() == null){
+				Log.d("test", "null client");
+			}
+			Client.getClient().sendToServer(message);
+
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 			message = "";
 		}
 	}
@@ -135,7 +177,11 @@ public class ClientControl implements Serializable{
 			message += "%";
 			message += pass;
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -149,7 +195,11 @@ public class ClientControl implements Serializable{
 
 			message = "#refresh";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -163,7 +213,11 @@ public class ClientControl implements Serializable{
 
 			message = "#morePosts";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -177,7 +231,11 @@ public class ClientControl implements Serializable{
 
 			message = "#myPosts";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -191,7 +249,11 @@ public class ClientControl implements Serializable{
 
 			message = "#moreMyPosts";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -205,7 +267,11 @@ public class ClientControl implements Serializable{
 
 			message = "#myLike";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -219,19 +285,43 @@ public class ClientControl implements Serializable{
 
 			message = "#moreLike";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
+
+			message = "";
+		}
+	}
+
+<<<<<<< HEAD
+	public void post(Posts p){
+=======
+	public void postMessage(){
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
+		if(!post) {
+			startTime = System.currentTimeMillis();
+
+			post = true;
+
+<<<<<<< HEAD
+			client.sendToServer(p);
+=======
+			message = "#post";
+
+			Client.getClient().sendToServer(message);
 
 			message = "";
 		}
 	}
 
 	public void post(Posts p){
-		if(!post) {
+		if(post) {
 			startTime = System.currentTimeMillis();
 
-			post = true;
-
-			client.sendToServer(p);
+			Client.getClient().sendToServer(p);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 		}
 	}
 
@@ -244,7 +334,11 @@ public class ClientControl implements Serializable{
 			message = "#delete%";
 			message += index;
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -259,7 +353,11 @@ public class ClientControl implements Serializable{
 			message = "#like%";
 			message += index;
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -274,7 +372,11 @@ public class ClientControl implements Serializable{
 			message = "#dislike%";
 			message += index;
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -288,7 +390,11 @@ public class ClientControl implements Serializable{
 
 			message = "#updateUser";
 
+<<<<<<< HEAD
 			client.sendToServer(message);
+=======
+			Client.getClient().sendToServer(message);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 			message = "";
 		}
@@ -318,10 +424,13 @@ public class ClientControl implements Serializable{
 		return myLike;
 	}
 
+<<<<<<< HEAD
 	public boolean isMyPost() {
 		return myPosts;
 	}
 
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 	public boolean isMoreLike() {
 		return moreLike;
 	}
@@ -410,6 +519,7 @@ public class ClientControl implements Serializable{
 		this.moreMyPosts = moreMyPosts;
 	}
 
+<<<<<<< HEAD
 	public boolean isCloseSocket(){   return closeSocket;   }
 
 	public void setCloseSocket() {
@@ -427,10 +537,13 @@ public class ClientControl implements Serializable{
 	/*
             get data
          */
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 	public ArrayList<Posts> getTimeLine() {
 		return timeLine;
 	}
 
+<<<<<<< HEAD
 	public ArrayList<Posts> getMyPostsList() {
 		return myPostsList;
 	}
@@ -438,11 +551,14 @@ public class ClientControl implements Serializable{
 	public ArrayList<Posts> getMyLikeList() {
 		return myLikeList;
 	}
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 	public ArrayList<String> getStringList() {
 		return stringList;
 	}
 
+<<<<<<< HEAD
 	/*
        socket connection method
      */
@@ -450,4 +566,13 @@ public class ClientControl implements Serializable{
 		closeSocket = true;
 	}
 
+=======
+	public ArrayList<Posts> getMyLikeList() {
+		return myLikeList;
+	}
+
+	public ArrayList<Posts> getMyPostsList() {
+		return myPostsList;
+	}
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 }

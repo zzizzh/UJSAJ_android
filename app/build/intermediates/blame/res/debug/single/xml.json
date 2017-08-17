@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_headers.xml",
         "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\xml\\pref_headers.xml"
     },
@@ -10,5 +11,17 @@
     {
         "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_notification.xml",
         "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\xml\\pref_notification.xml"
+=======
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_headers.xml",
+        "source": "C:\\Users\\Public\\MyApplication\\app\\src\\main\\res\\xml\\pref_headers.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_general.xml",
+        "source": "C:\\Users\\Public\\MyApplication\\app\\src\\main\\res\\xml\\pref_general.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\MyApplication\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_notification.xml",
+        "source": "C:\\Users\\Public\\MyApplication\\app\\src\\main\\res\\xml\\pref_notification.xml"
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     }
 ]

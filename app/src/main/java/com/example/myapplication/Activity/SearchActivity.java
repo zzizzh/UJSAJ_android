@@ -1,9 +1,14 @@
 package com.example.myapplication.Activity;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+=======
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,13 +19,20 @@ import android.widget.Toast;
 
 
 import com.example.myapplication.APIController.TourAPIController;
+<<<<<<< HEAD
 import com.example.myapplication.ProblemDomain.Location;
 import com.example.myapplication.ProblemDomain.TourData;
+=======
+import com.example.myapplication.Data.Posts;
+import com.example.myapplication.Data.TourData;
+import com.example.myapplication.Foundation.PostsList;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 import com.example.myapplication.R;
 import com.example.myapplication.CustomClass.ListViewAdapter;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import static com.example.myapplication.ProblemDomain.Constants.AREA_CODE;
 import static com.example.myapplication.ProblemDomain.Constants.AREA_TOUR_CODE;
 import static com.example.myapplication.ProblemDomain.Constants.CODE;
@@ -29,6 +41,15 @@ import static com.example.myapplication.ProblemDomain.Constants.CONTENTS_TYPE;
 import static com.example.myapplication.ProblemDomain.Constants.GET_LOCATION;
 import static com.example.myapplication.ProblemDomain.Constants.NAME;
 import static com.example.myapplication.ProblemDomain.Constants.SERVICE_CODE;
+=======
+import static com.example.myapplication.Data.Constants.AREA_CODE;
+import static com.example.myapplication.Data.Constants.AREA_TOUR_CODE;
+import static com.example.myapplication.Data.Constants.CODE;
+import static com.example.myapplication.Data.Constants.CONTENTES_TYPE_CODE;
+import static com.example.myapplication.Data.Constants.CONTENTS_TYPE;
+import static com.example.myapplication.Data.Constants.NAME;
+import static com.example.myapplication.Data.Constants.SERVICE_CODE;
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -71,7 +92,10 @@ public class SearchActivity extends AppCompatActivity {
 
     Button search_btn;
 
+<<<<<<< HEAD
     int SELECTED_LOCATION   = 0;
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +104,7 @@ public class SearchActivity extends AppCompatActivity {
 
         thisActivity = this;
 
+<<<<<<< HEAD
         tourAPIController = TourAPIController.getToruAPIController();
 
         search_btn = (Button)findViewById(R.id.search);
@@ -93,6 +118,12 @@ public class SearchActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+=======
+
+        tourAPIController = TourAPIController.getToruAPIController();
+
+        search_btn = (Button)findViewById(R.id.button);
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
         Button.OnClickListener mClickListener = new View.OnClickListener() {
             public void onClick(View v) {
@@ -163,11 +194,19 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+<<<<<<< HEAD
                 contentTypeIdCode = "";
             }
         });
 
        /*
+=======
+                    contentTypeIdCode = "";
+            }
+        });
+
+        /*
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             지역 선택 스피너 초기화
          */
         name_code_list = tourAPIController.queryAPI(AREA_CODE, "", true);
@@ -203,7 +242,11 @@ public class SearchActivity extends AppCompatActivity {
 
                 if(position != 0) {
                     areaCode = "&areaCode=" + area_code_list[position];
+<<<<<<< HEAD
                      /*
+=======
+                    /*
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                         시 군 구 스피너 초기화
                      */
                     name_code_list = tourAPIController.queryAPI(AREA_CODE, areaCode, true);
@@ -250,7 +293,11 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
          /*
+=======
+        /*
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             대분류 스피너 초기화
          */
         name_code_list = tourAPIController.queryAPI(SERVICE_CODE, "", true);
@@ -312,7 +359,11 @@ public class SearchActivity extends AppCompatActivity {
                     spinner_cat2.setAdapter(adapter_cat2);
 
                     /*
+<<<<<<< HEAD
                         두번째 시군구 스피너 선택 리스너
+=======
+                        중분류 스피너 선택 리스너
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                      */
                     spinner_cat2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                         @Override
@@ -321,8 +372,13 @@ public class SearchActivity extends AppCompatActivity {
                             if(position != 0) {
                                 cat2Code = "&cat2=" + cat2_code_list[position];
                                 /*
+<<<<<<< HEAD
                                      중분류 스피너 선택 리스너
                                 */
+=======
+                                    소분류 스피너 초기화
+                                 */
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
                                 name_code_list = tourAPIController.queryAPI(SERVICE_CODE, cat1Code+cat2Code, true);
 
                                 int size = name_code_list.get(CODE).size();
@@ -376,6 +432,7 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< HEAD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -390,6 +447,8 @@ public class SearchActivity extends AppCompatActivity {
         }
         return;
     }
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 }
 
 

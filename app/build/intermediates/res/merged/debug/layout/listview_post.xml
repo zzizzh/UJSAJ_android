@@ -19,13 +19,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
+<<<<<<< HEAD
             android:fontFamily="sans-serif-condensed"
+=======
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
             android:layout_weight="0.18"
             android:gravity="right" />
 
     </LinearLayout>
 
+<<<<<<< HEAD
     <FrameLayout
+=======
+    <RelativeLayout
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_weight="0.03">
@@ -33,6 +40,7 @@
         <ImageView
             android:id="@+id/postImage"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -64,6 +72,35 @@
 
 
     </FrameLayout>
+=======
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/pic" />
+
+        <ImageButton
+            android:id="@+id/LikeStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:background="#00ff0000"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ImageButton
+            android:id="@+id/UnlikeStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/LikeStar"
+            android:background="#00000000"
+            app:srcCompat="@android:drawable/star_big_off" />
+
+
+    </RelativeLayout>
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,25 +111,39 @@
             android:id="@+id/musictag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:fontFamily="sans-serif-condensed"
             android:text="MusicTag"
             android:textSize="22sp"
             android:autoLink="web"/>
+=======
+            android:text="MusicTag" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
         <TextView
             android:id="@+id/locationtag"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:fontFamily="sans-serif-condensed"
             android:layout_height="wrap_content"
             android:text="LocationTag"
             android:textSize="18sp" />
+=======
+            android:layout_height="wrap_content"
+            android:text="LocationTag" />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
 
         <TextView
             android:id="@+id/opinionText"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:fontFamily="sans-serif-condensed"
             android:layout_height="match_parent"
             android:text="Opinion\nOpinion\n Opinion "
             android:textSize="18sp" />
+=======
+            android:layout_height="match_parent"
+            android:text="Opinion\nOpinion\n Opinion " />
+>>>>>>> 665a5c80bfb719c5e9e91ad7ac588554f0053b2d
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_sync_black_24dp.png",
+        "source": "C:\\Android\\MyApplication99\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_notifications_black_24dp.png",
+        "source": "C:\\Android\\MyApplication99\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_info_black_24dp.png",
+        "source": "C:\\Android\\MyApplication99\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_info_black_24dp.png"
+    }
+]

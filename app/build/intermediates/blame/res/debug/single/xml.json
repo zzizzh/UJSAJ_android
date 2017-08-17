@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_headers.xml",
+        "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\xml\\pref_headers.xml"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_general.xml",
+        "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\xml\\pref_general.xml"
+    },
+    {
+        "merged": "C:\\Android\\MyApplication99\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_notification.xml",
+        "source": "C:\\Android\\MyApplication99\\app\\src\\main\\res\\xml\\pref_notification.xml"
+    }
+]

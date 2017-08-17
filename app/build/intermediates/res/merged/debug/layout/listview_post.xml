@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    tools:context="com.example.myapplication.Fragment.PostFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal">
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_weight="0.18"
+            android:gravity="right" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="0.03">
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:cropToPadding="false" />
+
+        <ImageButton
+            android:id="@+id/UnlikeStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/LikeStar"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="33dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/unlike_icon" />
+
+        <ImageButton
+            android:id="@+id/LikeStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="33dp"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/like_icon" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/musictag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="MusicTag"
+            android:textSize="22sp"
+            android:autoLink="web"/>
+
+        <TextView
+            android:id="@+id/locationtag"
+            android:layout_width="match_parent"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_height="wrap_content"
+            android:text="LocationTag"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/opinionText"
+            android:layout_width="match_parent"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_height="match_parent"
+            android:text="Opinion\nOpinion\n Opinion "
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>
